@@ -1,0 +1,37 @@
+package com.sofkaU.demoDDD.flightplan;
+
+import co.com.sofka.domain.generic.Entity;
+import com.sofkaU.demoDDD.flightplan.values.AirTrafficFrequency;
+import com.sofkaU.demoDDD.flightplan.values.AirportId;
+import com.sofkaU.demoDDD.flightplan.values.Frequency;
+import com.sofkaU.demoDDD.flightplan.values.Runaway;
+
+import java.util.Objects;
+
+public class AlternativeAirport extends Entity<AirportId> {
+
+    protected Runaway runaway;
+    protected AirTrafficFrequency airTrafficFrequency;
+
+    public AlternativeAirport(AirportId entityId, Runaway runaway, AirTrafficFrequency airTrafficFrequency) {
+        super(entityId);
+        this.runaway = runaway;
+        this.airTrafficFrequency = airTrafficFrequency;
+    }
+
+    public void updateAlternativeRunaway(Runaway runaway){
+        this.runaway = Objects.requireNonNull(runaway);
+    }
+
+    public void updateAlternativeAirTrafficFrequency(AirTrafficFrequency airTrafficFrequency){
+        this.airTrafficFrequency = Objects.requireNonNull(airTrafficFrequency);
+    }
+
+    public Runaway runaway() {
+        return runaway;
+    }
+
+    public AirTrafficFrequency airTrafficFrequency() {
+        return airTrafficFrequency;
+    }
+}
