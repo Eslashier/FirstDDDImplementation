@@ -1,4 +1,17 @@
 package com.sofkaU.demoDDD.flight.values;
 
-public class PlaneId {
+import co.com.sofka.domain.generic.Identity;
+
+public class PlaneId extends Identity {
+
+    public PlaneId(){
+
+    }
+    private PlaneId(String uid){
+        super(uid);
+    }
+
+    public static PlaneId of(String uid){
+        return new PlaneId(uid);
+    }
 }

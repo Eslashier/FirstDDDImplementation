@@ -17,12 +17,12 @@ public class FlightPlan extends AggregateEvent<FlightPlanId> {
     protected FlightPlanName flightPlanName;
     protected CruiseAltitude cruiseAltitude;
     protected FuelLoad fuelLoad;
-    protected Lenght lenght;
+    protected Length length;
 
     public FlightPlan(FlightPlanId entityId, DepartureAirport departureAirport, ArrivalAirport arrivalAirport, FlightPlanName flightPlanName,
-                      CruiseAltitude cruiseAltitude, FuelLoad fuelLoad, Lenght lenght) {
+                      CruiseAltitude cruiseAltitude, FuelLoad fuelLoad, Length length) {
         super(entityId);
-        appendChange(new FlightPlanCreated(departureAirport, arrivalAirport, flightPlanName, cruiseAltitude, fuelLoad, lenght)).apply();
+        appendChange(new FlightPlanCreated(departureAirport, arrivalAirport, flightPlanName, cruiseAltitude, fuelLoad, length)).apply();
     }
 
     public void addAlternativeAirport(AirportId entityId, Runaway runaway, AirTrafficFrequency airTrafficFrequency){
@@ -50,8 +50,8 @@ public class FlightPlan extends AggregateEvent<FlightPlanId> {
     public void UpdateFlightPlanCruiseFuel(FuelLoad fuelLoad){
         appendChange(new FlightPlanFuelUpdated(fuelLoad)).apply();
     }
-    public void UpdateFlightPlanLenght(Lenght lenght){
-        appendChange(new FlightPlanLenghtUpdated(lenght)).apply();
+    public void UpdateFlightPlanLenght(Length length){
+        appendChange(new FlightPlanLenghtUpdated(length)).apply();
     }
     public void ChangeDepartureAirport(AirportId entityId, Runaway runaway, AirTrafficFrequency airTrafficFrequency){
         appendChange(new DepartureAirportUpdated(entityId, runaway, airTrafficFrequency)).apply();
@@ -118,7 +118,7 @@ public class FlightPlan extends AggregateEvent<FlightPlanId> {
         return fuelLoad;
     }
 
-    public Lenght Lenght() {
-        return lenght;
+    public Length length() {
+        return length;
     }
 }

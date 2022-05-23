@@ -1,18 +1,18 @@
 package com.sofkaU.demoDDD.flightplan.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import com.sofkaU.demoDDD.flightplan.values.Lenght;
+import com.sofkaU.demoDDD.flightplan.values.Length;
 
 public class FlightPlanLenghtUpdated extends DomainEvent {
 
-    private final Lenght lenght;
+    private final Length length;
 
-    public FlightPlanLenghtUpdated(Lenght lenght) {
+    public FlightPlanLenghtUpdated(Length lenght) {
         super("airways.flightplan.lenghtupdated");
-        this.lenght = lenght;
+        this.length = lenght;
     }
 
-    public Lenght getLenght() {
-        return lenght;
+    public Length getLength() {
+        return length;
     }
 }
