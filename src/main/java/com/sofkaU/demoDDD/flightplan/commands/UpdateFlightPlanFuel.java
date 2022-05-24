@@ -1,4 +1,23 @@
 package com.sofkaU.demoDDD.flightplan.commands;
 
-public class UpdateFlightPlanFuel {
+import co.com.sofka.domain.generic.Command;
+import com.sofkaU.demoDDD.flightplan.values.FlightPlanId;
+import com.sofkaU.demoDDD.flightplan.values.FlightPlanName;
+
+public class UpdateFlightPlanFuel extends Command {
+    private final FlightPlanId flightPlanId;
+    private final FlightPlanName flightPlanName;
+
+    public UpdateFlightPlanFuel(FlightPlanId flightPlanId, FlightPlanName flightPlanName) {
+        this.flightPlanId = flightPlanId;
+        this.flightPlanName = flightPlanName;
+    }
+
+    public FlightPlanId getFlightPlanId() {
+        return flightPlanId;
+    }
+
+    public FlightPlanName getFlightPlanName() {
+        return flightPlanName;
+    }
 }
