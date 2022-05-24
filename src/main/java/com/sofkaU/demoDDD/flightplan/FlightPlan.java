@@ -87,7 +87,7 @@ public class FlightPlan extends AggregateEvent<FlightPlanId> {
         appendChange(new WaypointFrequencyUpdated(entityId,frequency)).apply();
     }
     public void UpdateWaypointGPS(WaypointId entityId, GPSCoordinate gpsCoordinate){
-        appendChange(new WaypointUpdated(entityId,gpsCoordinate)).apply();
+        appendChange(new WaypointGPSUpdated(entityId,gpsCoordinate)).apply();
     }
 
     public Set<DepartureAirport> DepartureAirport() {

@@ -12,17 +12,17 @@ public class FlightPlanCreated extends DomainEvent {
     private final FlightPlanName flightPlanName;
     private final CruiseAltitude cruiseAltitude;
     private final FuelLoad fuelLoad;
-    private final Lenght lenght;
+    private final Length length;
 
     public FlightPlanCreated(DepartureAirport departureAirport, ArrivalAirport arrivalAirport, FlightPlanName flightPlanName,
-                             CruiseAltitude cruiseAltitude, FuelLoad fuelLoad, Lenght lenght) {
+                             CruiseAltitude cruiseAltitude, FuelLoad fuelLoad, Length length) {
         super("airways.flightplan.flightplancreated");
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
         this.flightPlanName = flightPlanName;
         this.cruiseAltitude = cruiseAltitude;
         this.fuelLoad = fuelLoad;
-        this.lenght = lenght;
+        this.length = length;
     }
 
     public DepartureAirport getDepartureAirport() {
@@ -45,7 +45,7 @@ public class FlightPlanCreated extends DomainEvent {
         return fuelLoad;
     }
 
-    public Lenght getLenght() {
-        return lenght;
+    public Length getLength() {
+        return length;
     }
 }
