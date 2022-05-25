@@ -1,4 +1,29 @@
 package com.sofkaU.demoDDD.flight.commands;
 
-public class UpdatePilotLanguages {
+import co.com.sofka.domain.generic.Command;
+import com.sofkaU.demoDDD.flight.values.*;
+import com.sofkaU.demoDDD.plane.values.FlightTime;
+
+public class UpdatePilotLanguages extends Command{
+    private final FlightId flightId;
+    private final PilotId pilotId;
+    private final Languages languages;
+
+    public UpdatePilotLanguages(FlightId flightId, PilotId pilotId, Languages languages) {
+        this.flightId = flightId;
+        this.pilotId = pilotId;
+        this.languages = languages;
+    }
+
+    public FlightId getFlightId() {
+        return flightId;
+    }
+
+    public PilotId getPilotId() {
+        return pilotId;
+    }
+
+    public Languages getLanguages() {
+        return languages;
+    }
 }
